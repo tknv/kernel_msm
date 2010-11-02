@@ -3001,7 +3001,9 @@ static int fbcon_fb_unregistered(struct fb_info *info)
 	if (idx == info_idx) {
 		info_idx = -1;
 
-		for (i = 0; i < FB_MAX; i++) {
+// Hangs with fb0:
+//		for (i = 0; i < FB_MAX; i++) {
+for (i = 1; i < FB_MAX; i++) {
 			if (registered_fb[i] != NULL) {
 				info_idx = i;
 				break;
@@ -3438,7 +3440,9 @@ static void fbcon_start(void)
 
 		acquire_console_sem();
 
-		for (i = 0; i < FB_MAX; i++) {
+// Hangs with fb0:
+//		for (i = 0; i < FB_MAX; i++) {
+for (i = 1; i < FB_MAX; i++) {
 			if (registered_fb[i] != NULL) {
 				info_idx = i;
 				break;
