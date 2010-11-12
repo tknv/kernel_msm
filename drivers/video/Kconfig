@@ -2158,6 +2158,7 @@ source "drivers/video/omap/Kconfig"
 
 source "drivers/video/backlight/Kconfig"
 source "drivers/video/display/Kconfig"
+source "drivers/video/udlfb/Kconfig"
 
 if VT
 	source "drivers/video/console/Kconfig"
